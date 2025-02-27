@@ -25,5 +25,10 @@ class Record:
 
                 return p
 
+    def remove_phone(self, phone_number):
+        for p in self.phones:
+            if p.value == phone_number:
+                self.phones.remove(p)
+
     def __str__(self):
         return f"Contact name: {self.name.value}, phones: {'; '.join(p.value for p in self.phones)}"
